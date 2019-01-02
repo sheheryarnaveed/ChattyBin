@@ -1,8 +1,8 @@
 # Chatty Bin
 A fully working chatting application with wide range of features as follows:
 1. Double Level Security
-  *Jwt Web Tokens
-  *Sessions
+    * Jwt Web Tokens
+    * Sessions
 2. Chatting with friends
 3. Showing online/offline status
 4. Responsive minimalistic design
