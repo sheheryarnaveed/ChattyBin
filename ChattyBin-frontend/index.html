@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html ng-app="chattybin">
+<head>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700">
+    <link rel="stylesheet" href="stylesheets/mystyles.css">
+    <link rel="stylesheet" href="bundle-login.css">
+    <link rel="stylesheet" href="bundle-home.css">
+    <title>Chatty Bin</title>
+</head>
+    <body ng-controller="AppHub" >
+        <div id="login" class="login-page" ng-show=loginVisible>
+            <div class="form">
+                <h1>Chatty Bin</h1>
+                <p style="color: red;" ng-show=loginError>Login Authentication Error</p>
+                <p style="color: red;" ng-show=nullError>You must enter username and password!</p>
+                <div class="mdc-text-field username">
+                    <input ng-model="credentials.username" ng-keydown="$event.keyCode === 13 && login (credentials)" ng-init="credentials.username=''" type="text" class="mdc-text-field__input" id="username-input" name="username" required>
+                    <label class="mdc-floating-label" for="username-input">Username</label>
+                    <div class="mdc-line-ripple"></div>
+                </div>
+                <div class="mdc-text-field password">
+                    <input type="password" ng-model="credentials.password" ng-keydown="$event.keyCode === 13 && login (credentials)" ng-init="credentials.password=''" class="mdc-text-field__input" id="password-input" name="password" required>
+                    <label class="mdc-floating-label" for="password-input">Password</label>
+                    <div class="mdc-line-ripple"></div>
+                </div>
+                <div class="button-container">
+                    <button type="button" class="mdc-button cancel" ng-click="clear()">
+                        Reset
+                    </button>
+                    <button type="button" class="mdc-button mdc-button--raised next" ng-click="login (credentials)">
+                        Login
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <div  ng-show=!loginVisible>
+            <div class="home">
+            <aside class="mdc-drawer shrine-drawer">
+                <div class="mdc-drawer__header">
+                    <span class="shrine-logo-drawer user">
+                        <img ng-attr-src={{content.avatar}}><br>
+
+                    </span>
+                    <h1 class="shrine-title">{{content.name}}</h1>
+
+                </div>
+
+                <div class="mdc-drawer__content">
+                    <nav class="mdc-list">
+                        <a class="mdc-list-item mdc-simple" ng-repeat="friend in myfriends" ng-click="getConversation(friend.serial)">{{friend.name}}<span ng-if="friend.unread > 0" class="unread">({{friend.unread}})</span></a>
+                        <br><br><br><br><br><br><br><br>
+                        <a class="mdc-list-item mdc-logout" style="border-radius: 6px;justify-content: center;border: 2px solid var(--mdc-theme-primary, #6200ee);color: rgba(98, 0, 238, 0.87)" ng-click="logout()">Logout</a>
+                    </nav>
+                </div>
+            </aside>
+            <div class="convo-body">
+                <div id="conversation" ng-show=conversationVisible>
+                    <img ng-attr-src={{conversationData.avatar}}>
+                    {{conversationData.name}} ({{conversationData.status}})<br>
+                    <div id="chat" class="chatBox">
+                        <div>
+                            <div>
+                                <table>
+                                    <tr>
+                                        <th class="image"></th>
+                                        <th class="message"></th>
+                                        <th class="time"></th>
+                                    </tr>
+                                    <tr ng-repeat-start="message in conversationData.messages" ng-if="checkDate(message)">
+                                        <td class="date" colspan="3">{{message.date}}</td>
+                                    </tr>
+                                    <tr id={{message.serial}} ng-dblclick="deleteMessage(message.serial, conversationData.serial)" ng-repeat-end>
+                                        <td><img ng-if="conversationData.serial == message.senderSerial" ng-attr-src={{conversationData.avatar}}></td>
+                                        <td class="received" ng-if="conversationData.serial == message.senderSerial">{{message.message}}</td>
+                                        <td class="sent" ng-if="conversationData.serial != message.senderSerial">{{message.message}}</td>
+                                        <td class="time">{{message.time}}</td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <input id="messageArea" name="messageArea" type="text" placeholder="Type a message here" ng-model="messageArea" ng-keydown="$event.keyCode === 13 && sendMessage(messageArea,conversationData.serial)" ng-click="messageArea = ''">
+                </div>
+            </div> 
+        </div>
+        </div>
+            <script src="bundle-login.js" async></script>
+            <script src="bundle-home.js" async></script>
+            <script src="js/connector.js"></script>
+    </body>
+</html>

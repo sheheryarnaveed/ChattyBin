@@ -1,0 +1,148 @@
+@import url('https://fonts.googleapis.com/css?family=Quicksand:400,500');
+* {
+	font-family: 'Quicksand', sans-serif;
+}
+
+
+#userProfile img{
+	width:50px;
+}
+
+#conversation img {
+    width: 50px;
+}
+
+#chat {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+.chatBox {
+    border: 3px solid rgba(98, 0, 238, 0.24);
+    padding: 10px 10px;
+    height: 350px;
+    width: 700px;
+    overflow: scroll;
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+.chatBox img{
+	width: 30px !important;
+}
+.chatBox table{
+	width: 100%;
+	vertical-align: middle;
+}
+
+#messageArea {
+	width: 85%;
+    text-align: center;
+    height: 20px;
+    margin-left: 20px;
+    margin-top: 10px;
+    font-size: large;
+}
+
+th.image{
+	width:5%;
+	text-align: center;
+}
+
+th.message{
+	width: 85%;
+}
+
+td.date {
+    text-align: center;
+    color: rgba(98, 0, 238, 0.87);
+}
+
+td {
+	padding:5px;
+    margin:5px;
+}
+
+tr {
+	padding: 10px;
+	margin: 10px;
+}
+
+.time{
+	width: 10%;
+	text-align: right;
+	color: darkgray;
+}
+
+.chatBox .sent {
+	text-align: right;
+}
+.chatBox .received{
+	text-align: left;
+}
+
+.active .unread {
+	display: none;
+}
+
+
+.active {
+	background-color: #4CAF50;
+	color: white;
+}
+
+.login-page {
+	width:360px;
+	padding: 8% 0 0;
+	margin: auto;
+}
+
+.form {
+  position: relative;
+  max-width: 360px;
+  text-align: center;
+}
+
+.form input {
+  font-family: "Roboto", sans-serif;
+  outline: 0;
+  background: #f2f2f2;
+  width: 100%;
+  border: 0;
+  margin: 0 0 15px;
+  padding: 15px;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+
+
+div .user img{
+	width:75px;
+}
+
+.mdc-logout:hover {
+    background-color: rgba(98, 0, 238, 0.24);
+    color: #6200EE;
+}
+
+.mdc-simple:hover {
+    background-color: rgba(98, 0, 238, 0.24);
+    color: rgba(98, 0, 238, 0.87);
+}
+
+.mdc-simple:active {
+    background-color: rgba(98, 0, 238, 0.24);
+    text-decoration-color: rgba(98, 0, 238, 0.87);
+}
+.mdc-simple:focus {
+    background-color: rgba(98, 0, 238, 0.24);
+    color: rgba(98, 0, 238, 0.87);
+}
+
+.convo-body {
+    display: block;
+    overflow: auto;
+    z-index: 0;
+    padding: 20px 90px;
+}

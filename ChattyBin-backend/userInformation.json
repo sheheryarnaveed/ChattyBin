@@ -1,0 +1,102 @@
+{
+  "username": "Paul",
+  "name": "Paul",
+  "password": "-qrt*^##fr~",
+  "avatar": "avatars/paul.jpg",
+  "status": "offline",
+  "friends": [
+    {
+      "name": "James",
+      "lastseenid": "0"
+    },
+    {
+      "name": "Julia",
+      "lastseenid": "0"
+    },
+    {
+      "name": "Edwards",
+      "lastseenid": "0"
+    }
+  ]
+}
+
+{
+  "username": "Edwards",
+  "name": "Edwards",
+  "serial": "3",
+  "password": "+(uio$~6",
+  "avatar": "avatars/edwards.jpg",
+  "status": "offline",
+  "friends": [
+    {
+      "name": "James",
+      "serial": "1",
+      "lastseenid": "0"
+    },
+    {
+      "name": "Julia",
+      "serial": "2",
+      "lastseenid": "0"
+    },
+    {
+      "name": "Paul",
+      "serial": "4",
+      "lastseenid": "0"
+    }
+  ]
+}
+
+
+{
+  "username": "Julia",
+  "name": "Julia",
+  "serial": "2",
+  "password": ")Rm*y&!=ty",
+  "avatar": "avatars/julia.jpg",
+  "status": "offline",
+  "friends": [
+    {
+      "name": "James",
+      "serial": "1",
+      "lastseenid": "0"
+    },
+    {
+      "name": "Edwards",
+      "serial": "3",
+      "lastseenid": "0"
+    },
+    {
+      "name": "Paul",
+      "serial": "4",
+      "lastseenid": "0"
+    }
+  ]
+}
+
+
+
+{
+  "username": "James",
+  "name": "James",
+  "serial": "1",
+  "password": "#4*f@L%c#%",
+  "avatar": "avatars/james.jpg",
+  "status": "offline",
+  "friends": [
+    {
+      "name": "Julia",
+      "serial": "2",
+      "lastseenid": "0"
+    },
+    {
+      "name": "Edwards",
+      "serial": "3",
+      "lastseenid": "0"
+    },
+    {
+      "name": "Paul",
+      "serial": "4",
+      "lastseenid": "0"
+    }
+  ]
+}
