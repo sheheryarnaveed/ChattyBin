@@ -20,7 +20,7 @@ It is powered by MongoDB and mongoose is used for interacting with DB.
 ## Screenshots
 
 
+<img src="https://github.com/sheheryarnaveed/chattybin/blob/master/screenshots/8.png" width="550" height="300">
+<img src="https://github.com/sheheryarnaveed/chattybin/blob/master/screenshots/7.png" width="550" height="300">
 <img src="https://github.com/sheheryarnaveed/chattybin/blob/master/screenshots/1.png" width="550" height="300">
 <img src="https://github.com/sheheryarnaveed/chattybin/blob/master/screenshots/2.png" width="550" height="300">
-<img src="https://github.com/sheheryarnaveed/chattybin/blob/master/screenshots/3.png" width="550" height="300">
-<img src="https://github.com/sheheryarnaveed/chattybin/blob/master/screenshots/4.png" width="550" height="300">
